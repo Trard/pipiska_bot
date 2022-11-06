@@ -6,7 +6,7 @@ import { resize_dick, get_user, get_position } from "../db.js";
 const max_random = 10;
 const min_random = -5;
 
-function getRandomDickResize() {
+function get_random_dick_resize() {
   let max = max_random - 1;
   let min = min_random;
 
@@ -21,7 +21,7 @@ function getRandomDickResize() {
 export default async function (ctx) {
   let id = ctx.message.from.id;
 
-  let resize = getRandomDickResize();
+  let resize = get_random_dick_resize();
   await resize_dick(id, ctx.chat.id, resize);
 
   let user = get_user(id, ctx.chat.id);
