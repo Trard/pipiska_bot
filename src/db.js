@@ -65,9 +65,10 @@ export function get_position(id, chat) {
         throw new UserDoesNotExistError(id);
     }
 
-    return position;
+    return position + 1;
 }
 
+// start from 0
 export function get_top(chat) {
     let users = db.data.chats[chat]?.users;
 

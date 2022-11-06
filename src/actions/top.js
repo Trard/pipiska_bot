@@ -16,7 +16,7 @@ export default function(ctx) {
     response += "\n\n";
 
     for (let [index, user] of top.entries()) {
-        response += `${index}|${user.name} - ${user.size} ${locale.cm}\n`;
+        response += `${index + 1}|${user.name} - ${user.size} ${locale.cm}\n`;
     };
 
     ctx.reply(response);
