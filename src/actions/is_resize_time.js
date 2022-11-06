@@ -10,7 +10,7 @@ export default function (ctx, next) {
     let now = ctx.message.date;
     let user = get_user(id);
     
-    if (now - user.last_grew_up > 2) { //in seconds
+    if (now - user.last_grew_up > day) { //in seconds
         update_last_grew_up(id, now);        
         next();
     } else {
