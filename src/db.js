@@ -75,7 +75,7 @@ export function get_top(chat) {
         throw new ChatDoesNotExistError(chat)
     }
 
-    users.sort((a, b) => a.size > b.size ? 1 : -1);
+    users.sort((a, b) => a.size > b.size ? -1 : 1);
 
     return users;
 }
