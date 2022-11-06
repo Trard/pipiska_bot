@@ -1,0 +1,28 @@
+{
+  "name": "pipiska_bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Trard/pipiska_bot.git"
+  },
+  "author": "Trard",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Trard/pipiska_bot/issues"
+  },
+  "homepage": "https://github.com/Trard/pipiska_bot#readme",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "grammy": "^1.12.0",
+    "i18next": "^22.0.4",
+    "lowdb": "^5.0.5",
+    "mustache": "^4.2.0"
+  }
+}
