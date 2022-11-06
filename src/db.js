@@ -1,4 +1,4 @@
-import { UserDoesNotExistError, UserAlreadyExistsError } from './db/error.js'
+import { UserDoesNotExistError, UserAlreadyExistsError, ChatDoesNotExistError } from './db/error.js'
 
 import { Low } from 'lowdb'
 import { JSONFile } from 'lowdb/node'
@@ -57,13 +57,7 @@ export async function update_last_grew_up(id, chat, timestamp) {
 }
 
 export function get_position(id, chat) {
-    let users = db.data.chats[chat]?.users;
-
-    if (users === undefined) {
-        throw new UserDoesNotExistError(id)
-    }
-    
-    users.sort((a, b) => a.size > b.size ? 1 : -1);
+    let users = get_top(chat);
 
     let position = users.findIndex(user => user.id === id);
 
@@ -71,5 +65,17 @@ export function get_position(id, chat) {
         throw new UserDoesNotExistError(id);
     }
 
-    return position + 1;
+    return position;
+}
+
+export function get_top(chat) {
+    let users = db.data.chats[chat]?.users;
+
+    if (users === undefined) {
+        throw new ChatDoesNotExistError(chat)
+    }
+
+    users.sort((a, b) => a.size > b.size ? 1 : -1);
+
+    return users;
 }

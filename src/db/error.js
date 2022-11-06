@@ -17,3 +17,10 @@ export class UserAlreadyExistsError extends DatabaseError {
         this.id = id;
     }
 }
+
+export class ChatDoesNotExistError extends DatabaseError {
+    constructor(id) {
+        super(`Chat ${id} does not exist`);
+        this.id = id;
+    }
+}
