@@ -15,7 +15,7 @@ export default function (ctx, next) {
         next();
     } else {
         ctx.reply(Mustache.render(locale.not_resize_time, {
-            name: ctx.message.from.name,
+            name: user.name,
             value: user.size,
             current_position: get_position(id)
         }))

@@ -13,12 +13,12 @@ db.data ||= { users: [] };
 
 export * from './db/error.js'
 
-export async function register_user(id) {
+export async function register_user(id, name) {
     if (get_user(id)) {
         throw UserAlreadyExistsError(id)
     }
 
-    db.data.users.push({ size: 0, id: id, last_grew_up: 0 });
+    db.data.users.push({id: id, name: name, size: 0, last_grew_up: 0 });
 
     await db.write();
 }

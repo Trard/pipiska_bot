@@ -28,21 +28,21 @@ export default async function(ctx) {
     let resize = getRandomDickResize();
     await resize_dick(id, resize);
 
-    let current_size = get_user(id).size;
+    let user = get_user(id);
     let current_position = get_position(id);
     
     if (resize > 0) {
         ctx.reply(Mustache.render(locale.dick_grew_up, {
-            name: ctx.message.from.name,
+            name: user.name,
             value: resize,
-            new_value: current_size,
+            new_value: user.size,
             current_position: current_position
         }));
     } else if (resize < 0) {
         ctx.reply(Mustache.render(locale.dick_shruck, {
-            name: ctx.message.from.name,
+            name: user.name,
             value: -resize,
-            new_value: current_size,
+            new_value: user.size,
             current_position: current_position
         }))
     } else {
