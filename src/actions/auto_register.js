@@ -1,4 +1,4 @@
-import { get_user, register_user } from "./db.js";
+import { get_user, register_user } from "../db.js";
 
 export default async function(ctx, next) {
     let id = ctx.message.from.id;

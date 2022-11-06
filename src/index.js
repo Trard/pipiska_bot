@@ -1,9 +1,6 @@
 import { Bot } from "grammy";
-import * as dotenv from "dotenv";
 import fs from "node:fs/promises"
 import { resize_dick, is_resize_time, set_name, auto_register } from "./actions.js"
-
-dotenv.config();
 
 export const locale = JSON.parse(await fs.readFile("./src/locales/ru.json"));
 const bot = new Bot(process.env.token);
