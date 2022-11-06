@@ -20,10 +20,11 @@
   },
   "homepage": "https://github.com/Trard/pipiska_bot#readme",
   "dependencies": {
-    "dotenv": "^16.0.3",
     "grammy": "^1.12.0",
-    "i18next": "^22.0.4",
     "lowdb": "^5.0.5",
     "mustache": "^4.2.0"
+  },
+  "devDependencies": {
+    "dotenv": "^16.0.3"
   }
 }
