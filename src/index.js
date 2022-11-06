@@ -14,4 +14,8 @@ bot.command("ping", (ctx) => {
     ctx.reply(`PONG`);
 })
 
+bot.command("mak", ctx => {
+    ctx.reply("[xzeld](tg://user?id=828741336)", { parse_mode: "markdown" })
+})
+
 bot.start();
