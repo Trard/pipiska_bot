@@ -3,7 +3,7 @@ import fs from "node:fs/promises";
 import { resize_dick, is_resize_time, auto_register, top } from "./actions.js";
 
 export const locale = JSON.parse(await fs.readFile("./src/locales/ru.json"));
-const bot = new Bot(process.env.token);
+const bot = new Bot(process.env.TOKEN);
 
 bot.on("message::bot_command", auto_register);
 
