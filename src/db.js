@@ -8,7 +8,7 @@ import { Low } from "lowdb";
 import { JSONFile } from "lowdb/node";
 
 // Configure lowdb to write to JSONFile
-const adapter = new JSONFile("db.json"); // project root
+const adapter = new JSONFile("db/db.json");
 const db = new Low(adapter);
 
 // Read data from JSON file, this will set db.data content
