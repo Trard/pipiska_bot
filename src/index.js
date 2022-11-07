@@ -16,4 +16,4 @@ bot.command("ping", (ctx) => {
   ctx.reply(`PONG`);
 });
 
-bot.start();
+bot.start().catch((e) => console.error(e));
