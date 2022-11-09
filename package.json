@@ -20,6 +20,9 @@
   },
   "homepage": "https://github.com/Trard/pipiska_bot#readme",
   "dependencies": {
+    "@grammyjs/ratelimiter": "^1.1.6",
+    "@grammyjs/runner": "^1.0.4",
+    "@grammyjs/transformer-throttler": "^1.1.2",
     "grammy": "^1.12.0",
     "lowdb": "^5.0.5",
     "mustache": "^4.2.0"
