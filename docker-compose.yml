@@ -9,3 +9,4 @@ services:
       - "./db:/usr/src/app/db"
     env_file:
       - .env
+    restart: unless-stopped
