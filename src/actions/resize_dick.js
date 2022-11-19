@@ -8,13 +8,19 @@ const min = -5;
 
 const grow_factor = 0.85;
 
+function get_random_int_inclusive(min, max) {
+    let min = Math.ceil(min);
+    let max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1) + min); // The maximum is inclusive and the minimum is inclusive
+}
+
 function get_random_dick_resize() {
     let result;
 
     if (grow_factor >= Math.random()) {
-        result = Math.floor(Math.random() * (max + 1));
+        result = get_random_int_inclusive(1, max)
     } else {
-        result = Math.floor(Math.random() * (min + 1));
+        result = get_random_int_inclusive(-1, min);
     }
 
     return result;
