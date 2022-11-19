@@ -6,13 +6,15 @@ import { resize_dick, get_user, get_position } from "../db.js";
 const max_random = 10;
 const min_random = -5;
 
-function get_random_dick_resize() {
-  let max = max_random - 1;
-  let min = min_random;
+const grow_chance = 0.85;
 
-  let result = Math.floor(Math.random() * (max - min + 1) + min); //The maximum is inclusive and the minimum is inclusive
-  if (result == 0) {
-    result = max_random;
+function get_random_dick_resize() {
+  let result;
+
+  if (grow_chance >= Math.random()) {
+    result = Math.floor(Math.random() * (max + 1));
+  } else {
+    result = Math.floor(Math.random() * (min + 1));
   }
 
   return result;
