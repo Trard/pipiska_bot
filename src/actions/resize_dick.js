@@ -3,15 +3,15 @@ import { locale } from "../index.js";
 
 import { resize_dick, get_user, get_position } from "../db.js";
 
-const max_random = 10;
-const min_random = -5;
+const max = 10;
+const min = -5;
 
-const grow_chance = 0.85;
+const grow_factor = 0.85;
 
 function get_random_dick_resize() {
   let result;
 
-  if (grow_chance >= Math.random()) {
+  if (grow_factor >= Math.random()) {
     result = Math.floor(Math.random() * (max + 1));
   } else {
     result = Math.floor(Math.random() * (min + 1));
