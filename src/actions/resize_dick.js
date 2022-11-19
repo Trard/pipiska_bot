@@ -9,8 +9,8 @@ const min = -5;
 const grow_factor = 0.85;
 
 function get_random_int_inclusive(min, max) {
-    let min = Math.ceil(min);
-    let max = Math.floor(max);
+    min = Math.ceil(min);
+    max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1) + min); // The maximum is inclusive and the minimum is inclusive
 }
 
